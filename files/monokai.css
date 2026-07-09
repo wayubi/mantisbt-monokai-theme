@@ -167,6 +167,10 @@ table,
     background: var(--mk-elevated) !important;
     background-image: none !important;
 }
+/* Table header cells — accent bottom border for visual separation */
+.table > thead > tr > th {
+    border-bottom-width: 2px !important;
+}
 /* All table cells — ace-mantis.css forces #fff, default.css forces #edf3f4 on .category */
 .table th,
 .table td,
@@ -198,6 +202,11 @@ th.category label {
     background-color: var(--mk-elevated) !important;
 }
 
+/* Accent bottom border on table headers for visual separation */
+.table > thead > tr > th {
+    border-bottom-color: var(--mk-blue) !important;
+}
+
 /* Row borders — #E3E3E3 / #E5E5E5 / #ddd */
 hr {
     border-top-color: var(--mk-elevated) !important;
@@ -207,7 +216,8 @@ hr {
     border-top-color: var(--mk-elevated) !important;
 }
 
-/* Widget headers — white-to-gray gradient (ace.css line 10369) */
+/* Widget headers — white-to-gray gradient (ace.css line 10369)
+   Accent top border inspired by Monokai Pro panel styling. */
 .widget-box .widget-header,
 .widget-header {
     background: var(--mk-elevated) !important;
@@ -215,6 +225,36 @@ hr {
     background-image: none !important;
     color: var(--mk-text) !important;
     border-color: var(--mk-selection) !important;
+    border-top: 2px solid var(--mk-blue) !important;
+}
+/* Per-color widget header accent top borders */
+.widget-color-blue2 > .widget-header {
+    border-top: 2px solid var(--mk-blue) !important;
+}
+.widget-color-green > .widget-header,
+.widget-color-green2 > .widget-header,
+.widget-color-green3 > .widget-header {
+    border-top: 2px solid var(--mk-green) !important;
+}
+.widget-color-red > .widget-header,
+.widget-color-red2 > .widget-header,
+.widget-color-red3 > .widget-header {
+    border-top: 2px solid var(--mk-pink) !important;
+}
+.widget-color-purple > .widget-header {
+    border-top: 2px solid var(--mk-purple) !important;
+}
+.widget-color-orange > .widget-header {
+    border-top: 2px solid var(--mk-orange) !important;
+}
+.widget-color-pink > .widget-header {
+    border-top: 2px solid var(--mk-pink) !important;
+}
+.widget-color-dark > .widget-header {
+    border-top: 2px solid var(--mk-selection) !important;
+}
+.widget-color-grey > .widget-header {
+    border-top: 2px solid var(--mk-dimmed) !important;
 }
 .widget-box .widget-body,
 .widget-body {
@@ -393,6 +433,7 @@ input.tt-hint,
 .no-skin .nav-list > li:hover > a {
     color: var(--mk-green) !important;
     background-color: var(--mk-elevated) !important;
+    border-left: 3px solid var(--mk-green) !important;
 }
 .nav-list > li.open > a,
 .no-skin .nav-list > li.open > a,
@@ -405,6 +446,7 @@ input.tt-hint,
 .no-skin .nav-list > li.active > a {
     color: var(--mk-pink) !important;
     background-color: var(--mk-elevated) !important;
+    border-left: 3px solid var(--mk-pink) !important;
 }
 
 /* Sidebar submenu — white #FFF in ace-part2.css line 1557 */
@@ -502,6 +544,7 @@ input.tt-hint,
 .skin-3 .nav-list > li:hover > a {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-green) !important;
+    border-left: 3px solid var(--mk-green) !important;
 }
 .skin-3 .nav-list > li.open > a,
 .skin-3 .nav-list > li.open:hover > a {
@@ -512,6 +555,7 @@ input.tt-hint,
 .skin-3 .nav-list > li.active.highlight > a {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-pink) !important;
+    border-left: 3px solid var(--mk-pink) !important;
 }
 .skin-3 .nav-list > li .submenu > li.active:not(.open) > a {
     background-color: var(--mk-surface) !important;
@@ -1098,12 +1142,13 @@ input[type="radio"].ace + .lbl::before {
     color: var(--mk-bg) !important;
 }
 .label-default {
-    background-color: var(--mk-dimmed) !important;
+    background-color: var(--mk-purple) !important;
+    color: var(--mk-bg) !important;
 }
 
-/* Badge counters — #ABBAC3 from ace.css. Informational, not interactive. */
+/* Badge counters — accent color instead of dimmed */
 .badge {
-    background-color: var(--mk-dimmed) !important;
+    background-color: var(--mk-blue) !important;
     color: var(--mk-bg) !important;
 }
 
