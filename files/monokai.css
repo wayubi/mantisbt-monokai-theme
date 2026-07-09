@@ -1199,16 +1199,16 @@ input[type="radio"].ace + .lbl::before {
 }
 
 /* Due date / overdue semantic colors — default.css uses raw red/orange/green */
-td.due-0,
-td.overdue {
+.table > tbody > tr > td.due-0,
+.table > tbody > tr > td.overdue {
     background-color: var(--mk-pink) !important;
     color: #fff !important;
 }
-td.due-1 {
+.table > tbody > tr > td.due-1 {
     background-color: var(--mk-orange) !important;
     color: #fff !important;
 }
-td.due-2 {
+.table > tbody > tr > td.due-2 {
     background-color: var(--mk-green) !important;
     color: var(--mk-bg) !important;
 }
