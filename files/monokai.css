@@ -770,6 +770,12 @@ tr.bugnote .bugnote-note {
     color: var(--mk-text) !important;
 }
 
+/* Widget main content — #F7F7F7 from ace.min.css */
+.widget-main {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
 /* Widget toolbox — #EEE from ace.min.css */
 .widget-toolbox {
     background-color: var(--mk-elevated) !important;
@@ -1066,6 +1072,10 @@ pre code {
     color: var(--mk-comment) !important;
     border-top-color: var(--mk-elevated) !important;
 }
+.footer-content {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+}
 
 /* =================================================================
    CALENDAR PLUGIN
@@ -1178,6 +1188,11 @@ tr.spacer {
 /* Navbar collapse items — white from ace.css */
 .navbar.navbar-collapse {
     background-color: var(--mk-surface) !important;
+}
+
+/* Collapse — ace.css forces #FFF on ALL .collapse elements */
+.collapse {
+    background-color: transparent !important;
 }
 
 /* Active/focus ring removal on dropdown buttons */
