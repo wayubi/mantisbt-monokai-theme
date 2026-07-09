@@ -1,0 +1,3 @@
+<?php
+$s_plugin_MonokaiTheme_title = 'Monokai Theme';
+$s_plugin_MonokaiTheme_description = 'Applies a Monokai dark color theme to MantisBT';

@@ -1,0 +1,832 @@
+/**
+ * MantisBT Monokai Theme
+ * Based on the Monokai color scheme by Wimer Hazenberg
+ *
+ * Monokai colors:
+ *   Background:   #272822
+ *   Surface:      #2D2E27
+ *   Elevated:     #3E3D32
+ *   Selection:    #49483E
+ *   Text:         #F8F8F2
+ *   Dimmed:       #75715E
+ *   Comment:      #75715E
+ *   Pink:         #F92672
+ *   Green:        #A6E22E
+ *   Yellow:       #E6DB74
+ *   Blue:         #66D9EF
+ *   Purple:       #AE81FF
+ *   Orange:       #FD971F
+ */
+
+/* ===== CSS Variables ===== */
+:root {
+    --mk-bg:         #272822;
+    --mk-surface:    #2D2E27;
+    --mk-elevated:   #3E3D32;
+    --mk-selection:  #49483E;
+    --mk-text:       #F8F8F2;
+    --mk-dimmed:     #75715E;
+    --mk-comment:    #75715E;
+    --mk-pink:       #F92672;
+    --mk-green:      #A6E22E;
+    --mk-yellow:     #E6DB74;
+    --mk-blue:       #66D9EF;
+    --mk-purple:     #AE81FF;
+    --mk-orange:     #FD971F;
+}
+
+/* =================================================================
+   CRITICAL OVERRIDES — ace.css, ace-mantis.css, ace-skins.min.css
+   These target the hardcoded white/blue backgrounds that bleed through.
+   ================================================================= */
+
+/* Full-height white pseudo-element behind all content (ace.css line 40,
+   ace-mantis.css line 209 forced to #fff with !important) */
+.main-container:before {
+    background-color: var(--mk-bg) !important;
+    background: var(--mk-bg) !important;
+}
+.skin-3 .main-container:before {
+    background: var(--mk-bg) !important;
+    background-color: var(--mk-bg) !important;
+}
+
+/* Main content area (ace.css line 76, ace-mantis.css line 249) */
+.page-content {
+    background-color: var(--mk-bg) !important;
+}
+.skin-3 .page-content {
+    background-color: var(--mk-bg) !important;
+}
+
+/* ALL tables forced white in ace-mantis.css line 183 */
+table,
+.table {
+    background-color: var(--mk-surface) !important;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd) > td {
+    background-color: var(--mk-elevated) !important;
+}
+.table-striped > tbody > tr:nth-of-type(even) > td {
+    background-color: var(--mk-surface) !important;
+}
+.table-hover > tbody > tr:hover > td {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Widget headers — white-to-gray gradient (ace.css line 10369) */
+.widget-box .widget-header,
+.widget-header {
+    background: var(--mk-elevated) !important;
+    background-color: var(--mk-elevated) !important;
+    background-image: none !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+.widget-box .widget-body,
+.widget-body {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+.widget-box {
+    border-color: var(--mk-elevated) !important;
+    background-color: var(--mk-surface) !important;
+}
+
+/* Accordion panels — white (ace.css line 10151) */
+.accordion-style1.panel-group .panel {
+    background-color: var(--mk-surface) !important;
+}
+.accordion-style1.panel-group .panel .collapse {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Dropdown navbar items — white (ace.css line 8043) */
+.dropdown-navbar > li {
+    background-color: var(--mk-surface) !important;
+}
+.dropdown-navbar > li > a,
+.dropdown-navbar > li > a:hover,
+.dropdown-navbar > li > a:focus {
+    background-color: transparent !important;
+    color: var(--mk-text) !important;
+}
+.dropdown-navbar > li:hover,
+.dropdown-navbar > li.open {
+    background-color: var(--mk-elevated) !important;
+}
+.dropdown-navbar .dropdown-footer > a:hover {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Typeahead — white backgrounds (ace-mantis.css line 437) */
+.tt-menu {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+input.tt-hint,
+.form-group input.tt-hint {
+    background-color: var(--mk-elevated) !important;
+}
+.tt-suggestion,
+.tt-selectable {
+    color: var(--mk-text) !important;
+}
+.tt-suggestion.tt-selectable:hover,
+.tt-suggestion.tt-cursor,
+.tt-selectable:hover {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+
+/* Dropzone — white backgrounds (ace-mantis.css line 477) */
+.dropzone .dz-preview,
+.dropzone-previews .dz-preview {
+    background: var(--mk-elevated) !important;
+}
+.dropzone .dz-preview.dz-error .dz-error-message {
+    background: rgba(249, 38, 114, 0.6) !important;
+}
+
+/* Toggle switch — white pseudo (ace.css line 8807) */
+.ace-switch input:checked + .lbl::before {
+    background-color: var(--mk-green) !important;
+}
+
+/* Fullscreen widget — white (ace.css line 10852) */
+.widget-box.fullscreen {
+    background-color: var(--mk-surface) !important;
+}
+
+/* =================================================================
+   NAVBAR — Blue backgrounds from ace.css and ace-skins.min.css
+   ================================================================= */
+
+/* Main navbar bar (ace.css:1152 blue #438EB9, skin-3 changes to #404040) */
+.navbar,
+.navbar-default,
+.navbar.navbar-collapse {
+    background-color: var(--mk-surface) !important;
+    background: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.skin-3 .navbar,
+.skin-3 .navbar-default,
+.skin-3 .navbar.navbar-collapse {
+    background-color: var(--mk-surface) !important;
+    background: var(--mk-surface) !important;
+}
+
+/* Navbar button items — dark blue from ace.css line 1205 (#2E6589)
+   NOT overridden by skin-3 — these are the main offenders */
+.ace-nav > li > a {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+.ace-nav > li > a:hover,
+.ace-nav > li > a:focus,
+.ace-nav > li.open > a {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.ace-nav > li.blue > a {
+    background-color: var(--mk-surface) !important;
+}
+.ace-nav > li.blue > a:hover {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Navbar toggle button — blue in skin-3, overridden to #777 in ace-mantis.css */
+.navbar .navbar-toggle {
+    background-color: var(--mk-elevated) !important;
+}
+.navbar .navbar-toggle:hover {
+    background-color: var(--mk-selection) !important;
+}
+.navbar .navbar-toggle .icon-bar {
+    background-color: var(--mk-text) !important;
+}
+
+/* Navbar pseudo-element on medium screens (ace.css line 1943) */
+.navbar.navbar-collapse:before {
+    background: var(--mk-surface) !important;
+}
+.navbar.navbar-collapse .navbar-container {
+    background-color: var(--mk-surface) !important;
+}
+.skin-3 .navbar.navbar-collapse:before {
+    background: var(--mk-surface) !important;
+}
+.skin-3 .navbar.navbar-collapse .navbar-container {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Navbar brand */
+.navbar-brand,
+.navbar-default .navbar-brand {
+    color: var(--mk-pink) !important;
+}
+.navbar-brand:hover {
+    color: var(--mk-yellow) !important;
+}
+
+/* Navbar button text in nav ace-nav */
+.ace-nav > li > a > .badge {
+    background-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+
+/* =================================================================
+   SIDEBAR — Active/hover indicators from ace-skins.min.css (skin-3)
+   ================================================================= */
+
+/* Sidebar background */
+.sidebar,
+.h-sidebar {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar nav list */
+.nav-list > li > a {
+    color: var(--mk-text) !important;
+}
+.nav-list > li:hover > a {
+    color: var(--mk-green) !important;
+    background-color: var(--mk-elevated) !important;
+}
+.nav-list > li.active > a,
+.nav-list > li.active.highlight > a {
+    color: var(--mk-pink) !important;
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar active/hover indicators — blue with !important in skin-3 */
+.skin-3 .nav-list > li:hover:before {
+    background-color: var(--mk-green) !important;
+}
+.skin-3 .nav-list > li.active:before,
+.skin-3 .nav-list > li.active.highlight:before {
+    background-color: var(--mk-pink) !important;
+}
+.skin-3 .nav-list > li:hover > a {
+    color: var(--mk-green) !important;
+}
+.skin-3 .nav-list > li.open > a {
+    color: var(--mk-text) !important;
+}
+.skin-3 .nav-list > li.active > a,
+.skin-3 .nav-list > li.active.highlight > a {
+    color: var(--mk-pink) !important;
+}
+
+/* Sidebar sidebar-toggle button — white (ace-skins.min.css) */
+.skin-3 .sidebar-toggle > .ace-icon {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar shortcuts — near-white (ace-skins.min.css) */
+.sidebar.menu-min .sidebar-shortcuts-large {
+    background-color: var(--mk-elevated) !important;
+}
+.sidebar.h-sidebar .sidebar-shortcuts-large {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Sidebar menu toggler — blue #62A8D1 (ace-skins.min.css line 359) */
+.skin-3 .main-container .menu-toggler {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.skin-3 .main-container .menu-toggler:hover {
+    background-color: var(--mk-selection) !important;
+}
+
+/* Sidebar search — white (ace.css line 4594) */
+.nav-search.minimized .nav-search-icon {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.sidebar.menu-min .nav-search .nav-search-icon {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   BREADCRUMBS — light blue #E7F2F8 (ace-skins.min.css line 391)
+   ================================================================= */
+.breadcrumbs,
+.skin-3 .breadcrumbs {
+    background-color: var(--mk-surface) !important;
+    border-bottom-color: var(--mk-elevated) !important;
+}
+.breadcrumbs > li,
+.breadcrumbs > li > a {
+    color: var(--mk-text) !important;
+}
+.breadcrumbs > li + li::before {
+    color: var(--mk-comment) !important;
+}
+
+/* =================================================================
+   GENERAL UI — Base styles
+   ================================================================= */
+
+/* Body & text */
+body {
+    background-color: var(--mk-bg) !important;
+    color: var(--mk-text) !important;
+}
+
+a {
+    color: var(--mk-green) !important;
+}
+a:hover,
+a:focus {
+    color: var(--mk-yellow) !important;
+}
+
+/* Navbar header area */
+.navbar-header,
+#navbar {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Links in tables and content */
+#maintable a,
+.page-links a,
+.td-description a,
+.link {
+    color: var(--mk-green) !important;
+}
+
+/* =================================================================
+   PANELS & CARDS
+   ================================================================= */
+.panel {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.panel-default > .panel-heading {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.panel-body {
+    color: var(--mk-text) !important;
+    background-color: var(--mk-surface) !important;
+}
+.panel-footer {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.well {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   FORMS
+   ================================================================= */
+.form-control {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
+}
+.form-control:focus {
+    border-color: var(--mk-pink) !important;
+    box-shadow: inset 0 1px 1px rgba(249, 38, 114, 0.25) !important;
+}
+.form-control::placeholder {
+    color: var(--mk-comment) !important;
+}
+select.form-control {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+textarea.form-control {
+    background-color: var(--mk-elevated) !important;
+}
+label,
+.control-label {
+    color: var(--mk-text) !important;
+}
+.help-inline,
+.help-block {
+    color: var(--mk-comment) !important;
+}
+
+/* =================================================================
+   BUTTONS
+   ================================================================= */
+.btn-default {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
+}
+.btn-default:hover,
+.btn-default:focus {
+    background-color: var(--mk-selection) !important;
+    border-color: var(--mk-comment) !important;
+    color: var(--mk-text) !important;
+}
+.btn-primary {
+    background-color: var(--mk-pink) !important;
+    border-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #d61a5e !important;
+    border-color: #d61a5e !important;
+    color: #fff !important;
+}
+.btn-success {
+    background-color: var(--mk-green) !important;
+    border-color: var(--mk-green) !important;
+    color: var(--mk-bg) !important;
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #8cc41e !important;
+    border-color: #8cc41e !important;
+    color: var(--mk-bg) !important;
+}
+.btn-warning {
+    background-color: var(--mk-orange) !important;
+    border-color: var(--mk-orange) !important;
+    color: var(--mk-bg) !important;
+}
+.btn-info {
+    background-color: var(--mk-blue) !important;
+    border-color: var(--mk-blue) !important;
+    color: var(--mk-bg) !important;
+}
+.btn-danger {
+    background-color: var(--mk-pink) !important;
+    border-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+
+/* =================================================================
+   DROPDOWNS
+   ================================================================= */
+.dropdown-menu {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.dropdown-menu > li > a {
+    color: var(--mk-text) !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+    background-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+.dropdown-menu .divider {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* =================================================================
+   TABS / NAV TABS
+   ================================================================= */
+.nav-tabs {
+    border-bottom-color: var(--mk-elevated) !important;
+}
+.nav-tabs > li > a {
+    color: var(--mk-text) !important;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    border-bottom-color: var(--mk-surface) !important;
+    color: var(--mk-pink) !important;
+}
+.tab-content {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   SIDEBAR — Generic
+   ================================================================= */
+#sidebar,
+#sidebar-container {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+#sidebar a {
+    color: var(--mk-text) !important;
+}
+#sidebar a:hover {
+    color: var(--mk-green) !important;
+}
+.list-group-item {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.list-group-item:hover,
+.list-group-item:focus {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+
+/* =================================================================
+   PAGE HEADER
+   ================================================================= */
+.page-header {
+    border-bottom-color: var(--mk-elevated) !important;
+}
+
+/* =================================================================
+   STATUS / PRIORITY LABELS
+   ================================================================= */
+.label {
+    color: #fff !important;
+}
+.label-success {
+    background-color: var(--mk-green) !important;
+    color: var(--mk-bg) !important;
+}
+.label-warning {
+    background-color: var(--mk-orange) !important;
+    color: var(--mk-bg) !important;
+}
+.label-danger {
+    background-color: var(--mk-pink) !important;
+}
+.label-info {
+    background-color: var(--mk-blue) !important;
+    color: var(--mk-bg) !important;
+}
+.label-default {
+    background-color: var(--mk-dimmed) !important;
+}
+
+/* MantisBT status color rows */
+.status-10, .status-20, .status-30, .status-40, .status-50,
+.status-60, .status-70, .status-80, .status-90 {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   BUG VIEW
+   ================================================================= */
+.bug-header,
+.bug-summary,
+#bug-summary {
+    color: var(--mk-text) !important;
+}
+.bug-summary h3 {
+    color: var(--mk-yellow) !important;
+}
+
+/* =================================================================
+   ALERTS
+   ================================================================= */
+.alert {
+    color: var(--mk-text) !important;
+}
+.alert-success {
+    background-color: rgba(166, 226, 46, 0.15) !important;
+    border-color: var(--mk-green) !important;
+    color: var(--mk-green) !important;
+}
+.alert-warning {
+    background-color: rgba(253, 151, 31, 0.15) !important;
+    border-color: var(--mk-orange) !important;
+    color: var(--mk-orange) !important;
+}
+.alert-danger {
+    background-color: rgba(249, 38, 114, 0.15) !important;
+    border-color: var(--mk-pink) !important;
+    color: var(--mk-pink) !important;
+}
+.alert-info {
+    background-color: rgba(102, 217, 239, 0.15) !important;
+    border-color: var(--mk-blue) !important;
+    color: var(--mk-blue) !important;
+}
+
+/* =================================================================
+   PAGINATION
+   ================================================================= */
+.pagination > li > a {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.pagination > li > a:hover,
+.pagination > li > a:focus {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-pink) !important;
+    color: var(--mk-pink) !important;
+}
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus {
+    background-color: var(--mk-pink) !important;
+    border-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+
+/* =================================================================
+   MODALS
+   ================================================================= */
+.modal-content {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.modal-header {
+    border-bottom-color: var(--mk-elevated) !important;
+}
+.modal-header .modal-title {
+    color: var(--mk-text) !important;
+}
+.modal-header .close {
+    color: var(--mk-comment) !important;
+    opacity: 0.7 !important;
+    text-shadow: none !important;
+}
+.modal-header .close:hover {
+    color: var(--mk-pink) !important;
+    opacity: 1 !important;
+}
+.modal-footer {
+    border-top-color: var(--mk-elevated) !important;
+}
+
+/* =================================================================
+   PRE / CODE
+   ================================================================= */
+pre {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
+}
+code {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-orange) !important;
+}
+pre code {
+    background-color: transparent !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   FOOTER
+   ================================================================= */
+#footer,
+.footer {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-comment) !important;
+    border-top-color: var(--mk-elevated) !important;
+}
+
+/* =================================================================
+   CALENDAR PLUGIN
+   ================================================================= */
+.calendar-table th {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+.calendar-table td {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+.calendar-table td.today {
+    background-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+
+/* =================================================================
+   CHECKBOX / RADIO
+   ================================================================= */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--mk-pink) !important;
+}
+
+/* =================================================================
+   SCROLLBAR (Webkit)
+   ================================================================= */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--mk-bg) !important;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--mk-selection) !important;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--mk-comment) !important;
+}
+
+/* =================================================================
+   PROGRESS BARS
+   ================================================================= */
+.progress {
+    background-color: var(--mk-elevated) !important;
+}
+.progress-bar {
+    background-color: var(--mk-green) !important;
+}
+.progress-bar-success {
+    background-color: var(--mk-green) !important;
+}
+.progress-bar-warning {
+    background-color: var(--mk-orange) !important;
+}
+.progress-bar-danger {
+    background-color: var(--mk-pink) !important;
+}
+
+/* =================================================================
+   TOOLTIP
+   ================================================================= */
+.tooltip-inner {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   HR / SEPARATOR
+   ================================================================= */
+hr {
+    border-color: var(--mk-elevated) !important;
+}
+
+/* =================================================================
+   MISC — Hardcoded whites in ace.css
+   ================================================================= */
+.spacer,
+tr.spacer {
+    background-color: var(--mk-bg) !important;
+}
+
+.light-login {
+    background: var(--mk-bg) !important;
+}
+
+/* User info / account area */
+.user-info,
+.user-box {
+    color: var(--mk-text) !important;
+}
+
+/* =================================================================
+   PRINT
+   ================================================================= */
+@media print {
+    :root {
+        --mk-bg: #fff;
+        --mk-surface: #fff;
+        --mk-elevated: #eee;
+        --mk-text: #000;
+        --mk-comment: #666;
+        --mk-dimmed: #999;
+        --mk-pink: #c00;
+        --mk-green: #060;
+        --mk-yellow: #a60;
+        --mk-blue: #06c;
+        --mk-purple: #60c;
+        --mk-orange: #c60;
+    }
+    .main-container:before { background: #fff !important; }
+    .page-content { background: #fff !important; }
+    table, .table { background-color: #fff !important; }
+    .navbar, .sidebar, .widget-box .widget-header { display: none !important; }
+}
