@@ -64,10 +64,15 @@ table,
 .table {
     background-color: var(--mk-surface) !important;
 }
+/* All table cells — ace-mantis.css forces #fff, default.css forces #edf3f4 on .category */
+.table th,
+.table td,
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > thead > tr > td,
-.table > tbody > tr > td {
+.table > tbody > tr > td,
+td.category,
+th.category {
     background-color: var(--mk-surface) !important;
     border-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
@@ -562,6 +567,17 @@ select.form-control {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
 }
+/* Bare inputs/selects without .form-control — ace.css sets #FFF */
+input[type="text"]:not(.form-control),
+input[type="search"]:not(.form-control),
+input[type="email"]:not(.form-control),
+input[type="url"]:not(.form-control),
+input[type="tel"]:not(.form-control),
+select:not(.form-control) {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
 textarea.form-control {
     background-color: var(--mk-elevated) !important;
 }
@@ -740,6 +756,56 @@ label,
     color: var(--mk-yellow) !important;
 }
 
+/* Bugnote content — #e8e8e8 / #000 from default.css */
+tr.bugnote .bugnote-note {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+}
+
+/* Widget toolbox — #EEE from ace.min.css */
+.widget-toolbox {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Breadcrumb inner <ul> — #f5f5f5 from bootstrap */
+.breadcrumb {
+    background-color: transparent !important;
+}
+
+/* Inactive nav-tabs — #F9F9F9 from ace.min.css */
+.nav-tabs > li > a {
+    background-color: transparent !important;
+}
+
+/* Close button — #000 from bootstrap */
+.close {
+    color: var(--mk-text) !important;
+    opacity: 0.7 !important;
+    text-shadow: none !important;
+}
+.close:hover {
+    color: var(--mk-pink) !important;
+    opacity: 1 !important;
+}
+
+/* Caret — black from bootstrap */
+.btn > .caret,
+.dropup > .btn > .caret {
+    border-top-color: var(--mk-text) !important;
+    border-bottom-color: var(--mk-text) !important;
+}
+
+/* Nav dividers */
+.nav .nav-divider {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Checkbox/radio background — #FAFAFA from ace.min.css */
+input[type="checkbox"].ace + .lbl::before,
+input[type="radio"].ace + .lbl::before {
+    background-color: var(--mk-surface) !important;
+}
+
 /* =================================================================
    DROPDOWNS
    ================================================================= */
@@ -853,6 +919,21 @@ label,
 /* Badge counters — #ABBAC3 from ace.css. Informational, not interactive. */
 .badge {
     background-color: var(--mk-dimmed) !important;
+    color: var(--mk-bg) !important;
+}
+
+/* Due date / overdue semantic colors — default.css uses raw red/orange/green */
+td.due-0,
+td.overdue {
+    background-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
+td.due-1 {
+    background-color: var(--mk-orange) !important;
+    color: #fff !important;
+}
+td.due-2 {
+    background-color: var(--mk-green) !important;
     color: var(--mk-bg) !important;
 }
 
@@ -1023,22 +1104,28 @@ input[type="radio"] {
 }
 
 /* =================================================================
-   PROGRESS BARS
+   PROGRESS BARS — ace.css sets white gradient background-image
    ================================================================= */
 .progress {
+    background: var(--mk-elevated) !important;
     background-color: var(--mk-elevated) !important;
+    background-image: none !important;
 }
 .progress-bar {
     background-color: var(--mk-green) !important;
+    background-image: none !important;
 }
 .progress-bar-success {
     background-color: var(--mk-green) !important;
+    background-image: none !important;
 }
 .progress-bar-warning {
     background-color: var(--mk-orange) !important;
+    background-image: none !important;
 }
 .progress-bar-danger {
     background-color: var(--mk-pink) !important;
+    background-image: none !important;
 }
 
 /* =================================================================
