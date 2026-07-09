@@ -739,9 +739,9 @@ label,
 .open > .btn.btn-white.active.dropdown-toggle,
 .open > .btn-white.dropdown-toggle,
 .open > .btn.btn-white.dropdown-toggle {
-    background-color: var(--mk-text) !important;
+    background-color: var(--mk-blue) !important;
     background-image: none !important;
-    border-color: var(--mk-dimmed) !important;
+    border-color: var(--mk-blue) !important;
     color: var(--mk-bg) !important;
 }
 
