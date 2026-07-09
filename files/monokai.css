@@ -594,15 +594,17 @@ label,
     color: var(--mk-comment) !important;
 }
 
-/* Ace btn-white — #FFF !important (and btn-primary gradient) */
+/* Ace btn-white — #FFF !important (and btn-primary gradient).
+   Buttons in widget-toolbar/header blend when both use --mk-elevated,
+   so btn-white uses --mk-selection (one step lighter). */
 .btn.btn-white,
 .btn-white,
 .btn.btn-white.no-hover:active,
 .btn.btn-white.no-hover:hover {
-    background-color: var(--mk-elevated) !important;
+    background-color: var(--mk-selection) !important;
     background-image: none !important;
     color: var(--mk-text) !important;
-    border-color: var(--mk-selection) !important;
+    border-color: var(--mk-dimmed) !important;
 }
 .btn-white.active,
 .btn.btn-white.active,
@@ -619,10 +621,26 @@ label,
 .open > .btn.btn-white.active.dropdown-toggle,
 .open > .btn-white.dropdown-toggle,
 .open > .btn.btn-white.dropdown-toggle {
-    background-color: var(--mk-selection) !important;
+    background-color: var(--mk-comment) !important;
     background-image: none !important;
-    border-color: var(--mk-comment) !important;
+    border-color: var(--mk-dimmed) !important;
     color: var(--mk-green) !important;
+}
+
+/* Widget-toolbar tabs — ace.css sets active to #FFF, hover to #FFF */
+.widget-toolbar > .nav-tabs > li:not(.active) > a {
+    background-color: transparent !important;
+    color: var(--mk-dimmed) !important;
+}
+.widget-toolbar > .nav-tabs > li:not(.active) > a:hover {
+    background-color: var(--mk-selection) !important;
+    color: var(--mk-green) !important;
+}
+.widget-toolbar > .nav-tabs > li.active > a {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-elevated) !important;
+    border-bottom-color: var(--mk-surface) !important;
 }
 
 /* =================================================================
@@ -832,10 +850,10 @@ label,
     background-color: var(--mk-dimmed) !important;
 }
 
-/* Badge counters — #ABBAC3 from ace.css */
+/* Badge counters — #ABBAC3 from ace.css. Informational, not interactive. */
 .badge {
-    background-color: var(--mk-selection) !important;
-    color: var(--mk-text) !important;
+    background-color: var(--mk-dimmed) !important;
+    color: var(--mk-bg) !important;
 }
 
 /* MantisBT status color rows */
