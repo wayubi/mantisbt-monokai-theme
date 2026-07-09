@@ -255,18 +255,88 @@ input.tt-hint,
     border-color: var(--mk-elevated) !important;
 }
 
-/* Sidebar nav list */
-.nav-list > li > a {
+/* Sidebar nav list — default #F8F8F8 / #E3E3E3 from ace CSS */
+.nav-list > li > a,
+.no-skin .nav-list > li > a,
+.no-skin .nav-list > li > a:focus,
+.skin-3 .nav-list > li > a,
+.skin-3 .nav-list > li > a:focus {
+    background-color: transparent !important;
     color: var(--mk-text) !important;
 }
-.nav-list > li:hover > a {
+.nav-list > li:hover > a,
+.no-skin .nav-list > li:hover > a {
     color: var(--mk-green) !important;
     background-color: var(--mk-elevated) !important;
 }
+.nav-list > li.open > a,
+.no-skin .nav-list > li.open > a,
+.no-skin .nav-list .open > a {
+    color: var(--mk-text) !important;
+    background-color: var(--mk-elevated) !important;
+}
 .nav-list > li.active > a,
-.nav-list > li.active.highlight > a {
+.nav-list > li.active.highlight > a,
+.no-skin .nav-list > li.active > a {
     color: var(--mk-pink) !important;
     background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar submenu — white #FFF in ace-part2.css line 1557 */
+.nav-list > li .submenu,
+.no-skin .nav-list > li .submenu,
+.no-skin .sidebar.menu-min .nav-list > li > .submenu,
+.no-skin .sidebar.responsive-min .nav-list > li > .submenu,
+.no-skin .sidebar.navbar-collapse .nav-list li.hover > .submenu,
+.no-skin .sidebar.navbar-collapse.menu-min .nav-list > li > .submenu {
+    background-color: var(--mk-bg) !important;
+}
+.nav-list > li .submenu > li > a,
+.no-skin .nav-list > li .submenu > li > a {
+    background-color: var(--mk-bg) !important;
+    color: var(--mk-text) !important;
+}
+.nav-list > li .submenu > li > a:hover,
+.no-skin .nav-list > li .submenu > li > a:hover,
+.no-skin .nav-list > li > .submenu li > .submenu li a:hover {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-green) !important;
+}
+.nav-list > li .submenu > li.active > a,
+.nav-list > li .submenu > li.active:not(.open) > a,
+.no-skin .nav-list > li .submenu > li.active:not(.open) > a {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-pink) !important;
+}
+.nav-list > li .submenu > li.active > a:hover,
+.no-skin .nav-list > li .submenu > li.active:not(.open) > a:hover {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-pink) !important;
+}
+.nav-list li.hover > .submenu > li.active > a,
+.no-skin .nav-list li.hover > .submenu > li.active > a {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Sidebar shortcuts area — #FAFAFA / #FFF */
+.sidebar-shortcuts,
+.no-skin .sidebar-shortcuts {
+    background-color: var(--mk-surface) !important;
+}
+.sidebar-shortcuts-mini,
+.no-skin .sidebar-shortcuts-mini {
+    background-color: var(--mk-elevated) !important;
+}
+.no-skin .sidebar.menu-min .sidebar-shortcuts-large,
+.no-skin .sidebar.responsive-min .sidebar-shortcuts-large {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar menu text in minimized mode — #F5F5F5 */
+.no-skin .sidebar.menu-min .nav-list > li > a > .menu-text,
+.no-skin .sidebar.responsive-min .nav-list > li > a > .menu-text {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
 }
 
 /* Sidebar active/hover indicators — blue with !important in skin-3 */
@@ -278,19 +348,50 @@ input.tt-hint,
     background-color: var(--mk-pink) !important;
 }
 .skin-3 .nav-list > li:hover > a {
+    background-color: var(--mk-elevated) !important;
     color: var(--mk-green) !important;
 }
-.skin-3 .nav-list > li.open > a {
+.skin-3 .nav-list > li.open > a,
+.skin-3 .nav-list > li.open:hover > a {
+    background-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
 }
 .skin-3 .nav-list > li.active > a,
 .skin-3 .nav-list > li.active.highlight > a {
+    background-color: var(--mk-elevated) !important;
     color: var(--mk-pink) !important;
+}
+.skin-3 .nav-list > li .submenu > li.active:not(.open) > a {
+    background-color: var(--mk-surface) !important;
+    color: var(--mk-pink) !important;
+}
+.skin-3 .nav-list > li .submenu > li.active:not(.open) > a:hover {
+    background-color: var(--mk-elevated) !important;
+}
+.skin-3 .sidebar.menu-min .nav-list > li > a > .menu-text,
+.skin-3 .sidebar.responsive-min .nav-list > li > a > .menu-text {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.skin-3 .sidebar.menu-min .sidebar-shortcuts-large,
+.skin-3 .sidebar.responsive-min .sidebar-shortcuts-large {
+    background-color: var(--mk-elevated) !important;
 }
 
 /* Sidebar sidebar-toggle button — white (ace-skins.min.css) */
 .skin-3 .sidebar-toggle > .ace-icon {
     background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar sidebar-toggle button — #D0D0D0 / #FFF (ace-skins.min.css) */
+.skin-3 .sidebar-toggle {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+}
+.skin-3 .sidebar-toggle > .ace-icon {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
 }
 
 /* Sidebar shortcuts — near-white (ace-skins.min.css) */
@@ -375,7 +476,12 @@ a:focus {
     background-color: var(--mk-surface) !important;
     border-color: var(--mk-elevated) !important;
 }
-.panel-default > .panel-heading {
+.panel-default > .panel-heading,
+.panel-primary > .panel-heading,
+.panel-success > .panel-heading,
+.panel-info > .panel-heading,
+.panel-warning > .panel-heading,
+.panel-danger > .panel-heading {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
     border-color: var(--mk-elevated) !important;
@@ -393,6 +499,20 @@ a:focus {
     border-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
 }
+.thumbnail {
+    background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.jumbotron {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+
+/* Table headers inside widgets — #FFF in ace.min.css */
+.widget-body .table thead:first-child tr {
+    background: var(--mk-elevated) !important;
+    background-color: var(--mk-elevated) !important;
+}
 
 /* =================================================================
    FORMS
@@ -409,12 +529,54 @@ a:focus {
 .form-control::placeholder {
     color: var(--mk-comment) !important;
 }
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: var(--mk-selection) !important;
+    color: var(--mk-dimmed) !important;
+    cursor: not-allowed !important;
+}
+input[disabled],
+input:disabled,
+.form-group input[disabled],
+.form-group input:disabled {
+    background-color: var(--mk-selection) !important;
+    color: var(--mk-dimmed) !important;
+}
+input[readonly],
+.form-group input[readonly] {
+    background-color: var(--mk-selection) !important;
+}
+select[disabled] {
+    background-color: var(--mk-selection) !important;
+    color: var(--mk-dimmed) !important;
+}
 select.form-control {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
 }
 textarea.form-control {
     background-color: var(--mk-elevated) !important;
+}
+.input-group-addon {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
+}
+.has-success .input-group-addon {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-green) !important;
+    color: var(--mk-green) !important;
+}
+.has-warning .input-group-addon {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-orange) !important;
+    color: var(--mk-orange) !important;
+}
+.has-error .input-group-addon {
+    background-color: var(--mk-elevated) !important;
+    border-color: var(--mk-pink) !important;
+    color: var(--mk-pink) !important;
 }
 label,
 .control-label {
@@ -434,7 +596,10 @@ label,
     color: var(--mk-text) !important;
 }
 .btn-default:hover,
-.btn-default:focus {
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .btn-default.dropdown-toggle {
     background-color: var(--mk-selection) !important;
     border-color: var(--mk-comment) !important;
     color: var(--mk-text) !important;
@@ -447,7 +612,8 @@ label,
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
-.btn-primary.active {
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
     background-color: #d61a5e !important;
     border-color: #d61a5e !important;
     color: #fff !important;
@@ -458,7 +624,10 @@ label,
     color: var(--mk-bg) !important;
 }
 .btn-success:hover,
-.btn-success:focus {
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open > .btn-success.dropdown-toggle {
     background-color: #8cc41e !important;
     border-color: #8cc41e !important;
     color: var(--mk-bg) !important;
@@ -468,15 +637,51 @@ label,
     border-color: var(--mk-orange) !important;
     color: var(--mk-bg) !important;
 }
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .btn-warning.dropdown-toggle {
+    background-color: #e08600 !important;
+    border-color: #e08600 !important;
+    color: var(--mk-bg) !important;
+}
 .btn-info {
     background-color: var(--mk-blue) !important;
     border-color: var(--mk-blue) !important;
+    color: var(--mk-bg) !important;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open > .btn-info.dropdown-toggle {
+    background-color: #45c4dc !important;
+    border-color: #45c4dc !important;
     color: var(--mk-bg) !important;
 }
 .btn-danger {
     background-color: var(--mk-pink) !important;
     border-color: var(--mk-pink) !important;
     color: #fff !important;
+}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active,
+.open > .btn-danger.dropdown-toggle {
+    background-color: #d61a5e !important;
+    border-color: #d61a5e !important;
+    color: #fff !important;
+}
+
+/* Link-style buttons — inherits transparent from ace.css */
+.btn-link {
+    color: var(--mk-green) !important;
+}
+.btn-link:hover,
+.btn-link:focus {
+    color: var(--mk-yellow) !important;
 }
 
 /* =================================================================
@@ -805,6 +1010,23 @@ tr.spacer {
 .user-info,
 .user-box {
     color: var(--mk-text) !important;
+}
+
+/* List hover — #f5f5f5 from ace-mantis.css */
+.list > li > a:focus,
+.list > li > a:hover {
+    background-color: var(--mk-elevated) !important;
+}
+
+/* Navbar collapse items — white from ace.css */
+.navbar.navbar-collapse {
+    background-color: var(--mk-surface) !important;
+}
+
+/* Active/focus ring removal on dropdown buttons */
+.btn:active,
+.btn.active {
+    box-shadow: none !important;
 }
 
 /* =================================================================
