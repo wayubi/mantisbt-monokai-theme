@@ -620,12 +620,12 @@ label,
 
 /* Ace btn-white — #FFF !important (and btn-primary gradient).
    Buttons in widget-toolbar/header blend when both use --mk-elevated,
-   so btn-white uses --mk-selection (one step lighter). */
+   so btn-white uses --mk-dimmed (two steps lighter than toolbar). */
 .btn.btn-white,
 .btn-white,
 .btn.btn-white.no-hover:active,
 .btn.btn-white.no-hover:hover {
-    background-color: var(--mk-selection) !important;
+    background-color: var(--mk-dimmed) !important;
     background-image: none !important;
     color: var(--mk-text) !important;
     border-color: var(--mk-dimmed) !important;
@@ -645,10 +645,10 @@ label,
 .open > .btn.btn-white.active.dropdown-toggle,
 .open > .btn-white.dropdown-toggle,
 .open > .btn.btn-white.dropdown-toggle {
-    background-color: var(--mk-comment) !important;
+    background-color: var(--mk-text) !important;
     background-image: none !important;
     border-color: var(--mk-dimmed) !important;
-    color: var(--mk-green) !important;
+    color: var(--mk-bg) !important;
 }
 
 /* Widget-toolbar tabs — ace.css sets active to #FFF, hover to #FFF */
