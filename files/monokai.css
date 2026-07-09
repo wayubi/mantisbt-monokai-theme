@@ -421,6 +421,13 @@ input.tt-hint,
     color: var(--mk-text) !important;
 }
 
+/* Nav search input (Issue # box) — white from browser default */
+.nav-search-input {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+
 /* =================================================================
    BREADCRUMBS — light blue #E7F2F8 (ace-skins.min.css line 391)
    ================================================================= */
@@ -585,6 +592,37 @@ label,
 .help-inline,
 .help-block {
     color: var(--mk-comment) !important;
+}
+
+/* Ace btn-white — #FFF !important (and btn-primary gradient) */
+.btn.btn-white,
+.btn-white,
+.btn.btn-white.no-hover:active,
+.btn.btn-white.no-hover:hover {
+    background-color: var(--mk-elevated) !important;
+    background-image: none !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+.btn-white.active,
+.btn.btn-white.active,
+.btn.btn-white:active,
+.btn.btn-white:focus,
+.btn.btn-white:hover,
+.btn-white.btn-primary:active,
+.btn-white.btn-primary:focus,
+.btn-white.btn-primary:hover,
+.btn.btn-white.btn-primary:active,
+.btn.btn-white.btn-primary:focus,
+.btn.btn-white.btn-primary:hover,
+.open > .btn-white.active.dropdown-toggle,
+.open > .btn.btn-white.active.dropdown-toggle,
+.open > .btn-white.dropdown-toggle,
+.open > .btn.btn-white.dropdown-toggle {
+    background-color: var(--mk-selection) !important;
+    background-image: none !important;
+    border-color: var(--mk-comment) !important;
+    color: var(--mk-green) !important;
 }
 
 /* =================================================================
@@ -792,6 +830,12 @@ label,
 }
 .label-default {
     background-color: var(--mk-dimmed) !important;
+}
+
+/* Badge counters — #ABBAC3 from ace.css */
+.badge {
+    background-color: var(--mk-selection) !important;
+    color: var(--mk-text) !important;
 }
 
 /* MantisBT status color rows */
