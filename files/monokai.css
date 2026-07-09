@@ -938,6 +938,32 @@ input[type="radio"].ace + .lbl::before {
 .dropdown-menu .divider {
     background-color: var(--mk-elevated) !important;
 }
+/* Project selector — .dropdown-yellow from ace.css forces yellow bg on hover/active */
+.dropdown-yellow > li > a:hover,
+.dropdown-yellow > li > a:focus,
+.dropdown-yellow > li:hover > a {
+    background: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.dropdown-yellow > li.active > a,
+.dropdown-yellow > li.active:hover > a,
+.dropdown-yellow > li > a:active {
+    background: var(--mk-pink) !important;
+    color: #fff !important;
+}
+/* Project list inside dropdown — ace-mantis.css sets hover to #f5f5f5 */
+.dropdown-yellow .list > li > a {
+    color: var(--mk-text) !important;
+}
+.dropdown-yellow .list > li > a:hover,
+.dropdown-yellow .list > li > a:focus {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.dropdown-yellow .list > li.active > a {
+    background-color: var(--mk-pink) !important;
+    color: #fff !important;
+}
 
 /* =================================================================
    TABS / NAV TABS
