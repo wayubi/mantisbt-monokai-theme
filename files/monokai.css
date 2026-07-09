@@ -590,6 +590,13 @@ input.tt-hint,
     color: var(--mk-text) !important;
 }
 
+/* No-skin sidebar toggle — #FFF from ace.css */
+.no-skin .sidebar-toggle > .ace-icon {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    border-color: var(--mk-selection) !important;
+}
+
 /* Sidebar shortcuts — near-white (ace-skins.min.css) */
 .sidebar.menu-min .sidebar-shortcuts-large {
     background-color: var(--mk-elevated) !important;
@@ -615,6 +622,30 @@ input.tt-hint,
 .sidebar.menu-min .nav-search .nav-search-icon {
     background-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
+}
+
+/* Responsive/minimized sidebar white backgrounds */
+.no-skin .sidebar.menu-min .nav-list>li>.submenu,
+.no-skin .sidebar.responsive-min .nav-list>li>.submenu {
+    background-color: var(--mk-bg) !important;
+    border-color: var(--mk-selection) !important;
+}
+.sidebar.responsive-min .nav-search .nav-search-icon {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+}
+.no-skin .sidebar-shortcuts-mini {
+    background-color: var(--mk-elevated) !important;
+}
+.no-skin .sidebar.navbar-collapse .nav-list>li.open.hover:hover>a {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-green) !important;
+}
+.no-skin .sidebar.navbar-collapse.menu-min .nav-list>li>.submenu {
+    background-color: var(--mk-bg) !important;
+}
+.no-skin .sidebar.navbar-collapse {
+    border-bottom-color: var(--mk-elevated) !important;
 }
 
 /* Nav search input (Issue # box) — white from browser default */
@@ -1441,6 +1472,16 @@ tr.spacer {
 .label.label-grey {
     background-color: var(--mk-dimmed) !important;
     color: var(--mk-bg) !important;
+}
+
+/* =================================================================
+   MOBILE — Bootstrap adds border:1px solid #ddd to .table-responsive
+   at ≤767px, creating a white box around tables on mobile.
+   ================================================================= */
+@media (max-width: 767px) {
+    .table-responsive {
+        border-color: var(--mk-elevated) !important;
+    }
 }
 
 /* =================================================================
