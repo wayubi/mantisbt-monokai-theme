@@ -1296,6 +1296,32 @@ tr.spacer {
 }
 
 /* =================================================================
+   TIMELINE / PROFILE-ACTIVITY (My View page)
+   ================================================================= */
+.profile-activity {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: var(--mk-selection) !important;
+}
+.profile-activity:hover {
+    background-color: var(--mk-selection) !important;
+    border-left-color: var(--mk-dimmed) !important;
+    border-right-color: var(--mk-dimmed) !important;
+}
+.profile-activity:first-child:hover {
+    border-top-color: var(--mk-dimmed) !important;
+}
+.profile-activity .time {
+    color: var(--mk-dimmed) !important;
+}
+
+.label-grey,
+.label.label-grey {
+    background-color: var(--mk-dimmed) !important;
+    color: var(--mk-bg) !important;
+}
+
+/* =================================================================
    PRINT
    ================================================================= */
 @media print {
