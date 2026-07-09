@@ -157,6 +157,15 @@ h1, h2, h3, h4, h5, h6 {
 table,
 .table {
     background-color: var(--mk-surface) !important;
+    border-color: var(--mk-elevated) !important;
+}
+.table-bordered {
+    border-color: var(--mk-elevated) !important;
+}
+/* Table header row — ace.css forces gradient #F2F2F2 / #F8F8F8 */
+.table > thead > tr {
+    background: var(--mk-elevated) !important;
+    background-image: none !important;
 }
 /* All table cells — ace-mantis.css forces #fff, default.css forces #edf3f4 on .category */
 .table th,
@@ -187,6 +196,15 @@ th.category label {
 }
 .table-hover > tbody > tr:hover > td {
     background-color: var(--mk-elevated) !important;
+}
+
+/* Row borders — #E3E3E3 / #E5E5E5 / #ddd */
+hr {
+    border-top-color: var(--mk-elevated) !important;
+}
+.form-actions {
+    background-color: var(--mk-surface) !important;
+    border-top-color: var(--mk-elevated) !important;
 }
 
 /* Widget headers — white-to-gray gradient (ace.css line 10369) */
@@ -437,6 +455,33 @@ input.tt-hint,
 .no-skin .sidebar.menu-min .sidebar-shortcuts-large,
 .no-skin .sidebar.responsive-min .sidebar-shortcuts-large {
     background-color: var(--mk-elevated) !important;
+}
+
+/* Sidebar nav-list borders — #E5E5E5 (ace.css) / #F2F2F2 (ace-skins) */
+.nav-list > li {
+    border-color: var(--mk-elevated) !important;
+}
+.nav-list > li .submenu {
+    border-color: var(--mk-selection) !important;
+}
+/* Skin-3 nav-list borders — ace-skins forces #A4C6DD / #95bad2 / #F2F2F2 with !important */
+.skin-3 .nav-list > li.active,
+.skin-3 .nav-list > li.active + li {
+    border-color: var(--mk-elevated) !important;
+}
+.skin-3 .nav-list > li:hover,
+.skin-3 .nav-list > li.open {
+    border-color: var(--mk-elevated) !important;
+}
+.skin-3 .nav-list > li.open + li,
+.skin-3 .nav-list > li:hover + li {
+    border-top-color: var(--mk-elevated) !important;
+}
+.skin-3 .nav-list > li.active + li:last-child {
+    border-bottom-color: var(--mk-elevated) !important;
+}
+.skin-3 .nav-list > li.active + li:last-child:hover {
+    border-bottom-color: var(--mk-elevated) !important;
 }
 
 /* Sidebar menu text in minimized mode — #F5F5F5 */
@@ -873,6 +918,12 @@ tr.bugnote .bugnote-note {
 /* Widget toolbox — #EEE from ace.min.css */
 .widget-toolbox {
     background-color: var(--mk-elevated) !important;
+}
+.widget-toolbox:first-child,
+.widget-toolbox:last-child {
+    border-color: var(--mk-selection) !important;
+    border-top-color: var(--mk-selection) !important;
+    border-bottom-color: var(--mk-selection) !important;
 }
 
 /* Breadcrumb inner <ul> — #f5f5f5 from bootstrap */
