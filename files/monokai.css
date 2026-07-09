@@ -70,12 +70,20 @@ table,
 .table > thead > tr > th,
 .table > tbody > tr > th,
 .table > thead > tr > td,
-.table > tbody > tr > td,
-td.category,
-th.category {
+.table > tbody > tr > td {
     background-color: var(--mk-surface) !important;
     border-color: var(--mk-elevated) !important;
     color: var(--mk-text) !important;
+}
+/* Category cells (label column) — #edf3f4 from default.css.
+   Use elevated to visually separate labels from value cells. */
+td.category,
+th.category,
+td.category label,
+th.category label {
+    background-color: var(--mk-elevated) !important;
+    color: var(--mk-text) !important;
+    font-weight: bold !important;
 }
 .table-striped > tbody > tr:nth-of-type(odd) > td {
     background-color: var(--mk-elevated) !important;
